@@ -20,5 +20,5 @@ jobs:
     steps:
       - run: cd ~/diabetes_prediction
       - run: sudo docker build . -t "diabetes_prediction"
-      - run: sudo docker kill $(docker ps -q)
+      - run: sudo docker kill $(sudo docker ps -q)
       - run: sudo docker run -d -p 80:80 diabetes_prediction
