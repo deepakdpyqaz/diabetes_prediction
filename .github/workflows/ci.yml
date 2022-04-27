@@ -15,4 +15,4 @@ jobs:
       - run: echo "DATA Preprocessing completed"
       - run: python ./pipeline_runner.py
       - run: sudo docker build . -t "diabetes_prediction"
-      - run: sudo docker run -d -p 80:80 diabetes_prediction
+      - run: sudo docker run -d -p 80:80 diabetes_prediction --name "predictor"
