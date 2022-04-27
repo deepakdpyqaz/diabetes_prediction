@@ -1,10 +1,9 @@
 name: diabetes-prediction
 on: [push]
-run: source env/bin/activate
-run: pip install -r requirements.txt
 jobs:
   data-process:
     runs-on: self-hosted
     steps:
+      - run: pwd
       - run: python data_process.py
   
