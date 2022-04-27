@@ -5,4 +5,16 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: cd ~/diabetes_prediction
-      - run: ls
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: '3.6.9' 
+          architecture: 'x64' 
+      - run: pip install -r requirements.txt
+      - run: python ./data_process.py
+  build-model:
+    runs-on: self-hosted
+    needs: [data-process]
+    steps:
+      - run: cd ~/diabetes_prediction
+      - run: python ./pipeline_runner.py
