@@ -34,6 +34,8 @@ for f in files:
         df.to_csv(os.path.join(OUTPUT_DATA_DIR,fname),index=False)
         end = time.time()
         logging.info(f"Processed {fname} -------> {round(end-start,2)} ms")
+        if not os.path.exists("scalers"):
+            os.mkdir("scalers")
         with open("scalers/scaler.pickle","wb") as pf:
             pickle.dump(scaler,pf)
         os.remove(f)
