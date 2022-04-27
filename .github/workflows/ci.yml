@@ -4,7 +4,6 @@ jobs:
   data-process:
     runs-on: self-hosted
     steps:
-      - run: pwd
-      - run: ls
+      -uses: actions/checkout@v3
       - run: python ./data_process.py
   
