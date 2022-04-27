@@ -1,0 +1,9 @@
+.env
+__pycache__/
+env/
+.streamlit
+metadata/
+pipelines/
+processed_data/
+scalers/
+serving_model/
