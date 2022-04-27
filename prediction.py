@@ -63,7 +63,7 @@ def _build_keras_model() -> tf.keras.Model:
   inputs = [keras.layers.Input(shape=(1,), name=f) for f in _FEATURE_KEYS]
   d = keras.layers.concatenate(inputs)
   for _ in range(2):
-    d = keras.layers.Dense(8, activation='relu')(d)
+    d = keras.layers.Dense(10, activation='relu')(d)
   outputs = keras.layers.Dense(1,activation='sigmoid')(d)
 
   model = keras.Model(inputs=inputs, outputs=outputs)
