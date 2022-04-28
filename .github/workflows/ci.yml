@@ -7,14 +7,13 @@ jobs:
       - run: cd ~/diabetes_prediction
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
+        with:
+          python-version: '3.6.9' 
+          architecture: 'x64' 
+      - run: pip install -r requirements.txt
+      - run: python ./data_process.py
+      - run: echo "DATA Preprocessing completed"
+      - run: python ./pipeline_runner.py
       - run: python ./cleanup.py
-      #   with:
-      #     python-version: '3.6.9' 
-      #     architecture: 'x64' 
-      # - run: pip install -r requirements.txt
-      # - run: python ./data_process.py
-      # - run: echo "DATA Preprocessing completed"
-      # - run: python ./pipeline_runner.py
-      # - run: python ./cleanup.py
-      # - run: sudo docker build . -t "diabetes_prediction"
-      # - run: sudo docker run -d -p 80:80 diabetes_prediction
+      - run: sudo docker build . -t "diabetes_prediction"
+      - run: sudo docker run -d -p 80:80 diabetes_prediction
