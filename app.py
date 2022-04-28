@@ -12,7 +12,7 @@ st.set_page_config(page_title="Dibetes Prediction", page_icon="🤖")
 st.title("Diabetes Prediction")
 st.sidebar.markdown("""Code at [GitHub](https://github.com/deepakdpyqaz/diabetes_prediction)""")
 mode = st.sidebar.selectbox("Select Mode", ["Predict", "View Details"])
-MODEL_DIR = "/home/deepak/pipeline/serving_model/dibetes_prediction_pipeline"
+MODEL_DIR = "serving_model/dibetes_prediction_pipeline"
 DATA_DIR = "processed_data"
 available_models = os.listdir(MODEL_DIR)
 model_selected = st.sidebar.selectbox("Models",available_models)
