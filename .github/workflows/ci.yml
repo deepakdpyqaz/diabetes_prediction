@@ -5,9 +5,9 @@ jobs:
     runs-on: self-hosted
     steps:
       - run: cd ~/diabetes_prediction
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
       - run: python ./cleanup.py
-      # - uses: actions/checkout@v3
-      # - uses: actions/setup-python@v3
       #   with:
       #     python-version: '3.6.9' 
       #     architecture: 'x64' 
