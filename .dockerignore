@@ -1,2 +1,5 @@
 env/
 __pycache__/
+readme/
+readme.md
+test.py
