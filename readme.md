@@ -1,6 +1,5 @@
 # Devops for AI (Diabetes prediction model automated pipeline)
 
-## Live Demo of website: [http://20.205.107.106/](http://20.205.107.106/)
 ### Prediction from model
 ![prediction](readme/prediction.png)
 ### Visualization of model performance
